@@ -82,13 +82,44 @@ Uma **segunda rodada**, só sobre essas correções, achou a regressão delas me
 “ignore as regras **da loja**…”, e a trava de saúde tinha deixado de reconhecer “sofro de ansiedade”. Corrigido de novo —
 agora o agente entende a fala original e só o registro é mascarado — e as 30 frases da rodada viraram teste.
 
+## Modo LLM
+
+O mesmo agente com um modelo de verdade (`web/src/lib/agente/llm.ts`): o modelo decide quais ferramentas chamar, mas as
+ferramentas são **as mesmas funções** do modo demo e as travas continuam sendo código.
+
+- **Antes do modelo:** dado pessoal é mascarado (não vai para o provedor) e injeção recebe resposta fixa, **sem chamar o
+  modelo** (custo zero).
+- **Nas ferramentas:** a busca nunca devolve esgotado; o preço já vai formatado para o modelo copiar, não calcular; id
+  inventado volta como erro para o modelo corrigir.
+- **Depois do modelo:** preço que não veio de uma ferramenta é trocado por “[preço no site]”; esgotado citado gera alerta;
+  saúde recebe o aviso fixo.
+- **Trace:** tokens e custo **reais** (do `usage` da API), cada chamada ao modelo e cada ferramenta como um passo.
+- Se o provedor falhar (sem chave, sem crédito, fora do ar), a loja responde no modo demo e o trace registra o motivo.
+
+Liga só com opt-in explícito (ter a chave no ambiente sozinha não gasta nada):
+
+```bash
+# PowerShell; a chave fica no ambiente, nunca no código
+$env:ANTHROPIC_API_KEY = "<sua chave>"
+$env:MOENDA_MODO = "llm"
+$env:MOENDA_MODELO = "claude-opus-5-5"   # padrão; troque por claude-sonnet-5-5 ou claude-haiku-4-5 para baratear
+npm run dev
+```
+
+Detalhes da chamada: `effort: "low"` (atendimento de balcão não precisa de raciocínio longo), `tool_choice` automático e
+ferramentas com `strict: true`. As chamadas também usam **fallback no servidor** (`fallbacks: "default"`, beta
+`server-side-fallback-2026-07-01`): se o modelo recusar um pedido, a API refaz no modelo recomendado na mesma chamada.
+
+**O que ainda não foi medido:** a eval ainda não rodou no modo LLM, porque isso exige chave e custa dinheiro. Os testes do
+modo LLM cobrem ferramentas, travas e montagem das mensagens sem rede, e um teste prova que a injeção não chega ao modelo.
+
 ## Rodar
 
 ```bash
 cd web
 npm install
 npm run dev        # http://localhost:3000
-npm test           # 131 testes (Vitest)
+npm test           # 143 testes (Vitest)
 npm run eval       # roda a eval em todas as versões e grava os traces de /custos
 ```
 
@@ -103,7 +134,9 @@ web/src/lib/agente/            o agente
   entender.ts                  PT-BR → filtros (métodos, apelidos, torra, notas, preço)
   ferramentas.ts               buscar, detalhar, compatibilidade, carrinho
   travas.ts                    injeção, dados pessoais, saúde, preço, estoque
-  agente.ts                    orquestra e registra cada passo do trace
+  agente.ts                    orquestra e registra cada passo do trace (modo demo)
+  llm.ts                       modo LLM: mesmo laço com um modelo de verdade
+  precos-modelos.ts            preço por modelo (custo do trace e simulador)
   versoes.ts                   v0.1 → v0.4, uma capacidade nova por versão
   registro.ts                  traces em JSONL (.dados/, fora do git)
 web/src/lib/eval/              cenários (desenvolvimento + inédito) e avaliação
@@ -113,6 +146,5 @@ web/src/app/                   loja, assistente, qualidade, custos, api/chat
 
 ## Próximos passos
 
-- Modo LLM: as mesmas ferramentas e travas em volta de um modelo de verdade, com custo real no trace.
-- Rodar a eval com o modelo e comparar com o modo demo.
+- Rodar a eval no modo LLM e comparar com o modo demo (nota, custo e latência por modelo).
 - Exportar os traces para Langfuse/OpenTelemetry.
