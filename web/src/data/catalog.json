@@ -1,0 +1,2729 @@
+[
+  {
+    "categoria": "cafe",
+    "nome": "Aurora",
+    "marca": "Grão Navegante",
+    "origem": "Caparaó",
+    "pais": "BR",
+    "altitude_m": 1450,
+    "variedade": "Gesha",
+    "processo": "Natural",
+    "torra": "Média-clara",
+    "notas": [
+      "caramelo claro",
+      "mel",
+      "laranja"
+    ],
+    "pontuacao_sca": 85.9,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 73.1,
+    "estoque": 0,
+    "id": "P001",
+    "slug": "aurora-p001"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Neblina",
+    "marca": "Sítio Três Pedras",
+    "origem": "Norte Pioneiro do Paraná",
+    "pais": "BR",
+    "altitude_m": 600,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Cereja descascado",
+    "torra": "Média-escura",
+    "notas": [
+      "ameixa seca",
+      "especiarias",
+      "chocolate amargo"
+    ],
+    "pontuacao_sca": 83.1,
+    "peso_g": 1000,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 172.44,
+    "estoque": 24,
+    "id": "P002",
+    "slug": "neblina-p002"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Ladeira",
+    "marca": "Grão Navegante",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1800,
+    "variedade": "Catuaí Amarelo",
+    "processo": "Cereja descascado",
+    "torra": "Média-escura",
+    "notas": [
+      "especiarias",
+      "chocolate amargo",
+      "melaço"
+    ],
+    "pontuacao_sca": 86.4,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 89.6,
+    "estoque": 24,
+    "id": "P003",
+    "slug": "ladeira-p003"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Terra Roxa",
+    "marca": "Serra Alta",
+    "origem": "Nyeri, Quênia",
+    "pais": "KE",
+    "altitude_m": 1800,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Natural",
+    "torra": "Média-clara",
+    "notas": [
+      "caramelo claro",
+      "laranja",
+      "mel"
+    ],
+    "pontuacao_sca": 84.6,
+    "peso_g": 250,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 73.4,
+    "estoque": 15,
+    "id": "P004",
+    "slug": "terra-roxa-p004"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Cerejeira",
+    "marca": "Grão Navegante",
+    "origem": "Nyeri, Quênia",
+    "pais": "KE",
+    "altitude_m": 1700,
+    "variedade": "Gesha",
+    "processo": "Cereja descascado",
+    "torra": "Escura",
+    "notas": [
+      "tabaco",
+      "defumado",
+      "cacau intenso"
+    ],
+    "pontuacao_sca": 86.5,
+    "peso_g": 1000,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 325.8,
+    "estoque": 24,
+    "id": "P005",
+    "slug": "cerejeira-p005"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Vento Norte",
+    "marca": "Sítio Três Pedras",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 900,
+    "variedade": "Caturra",
+    "processo": "Natural",
+    "torra": "Escura",
+    "notas": [
+      "chocolate 70%",
+      "madeira",
+      "tabaco"
+    ],
+    "pontuacao_sca": 85.9,
+    "peso_g": 1000,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "Moka",
+      "Prensa francesa"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 263.16,
+    "estoque": 8,
+    "id": "P006",
+    "slug": "vento-norte-p006"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Pedra Branca",
+    "marca": "Grão Navegante",
+    "origem": "Cerrado Mineiro",
+    "pais": "BR",
+    "altitude_m": 1150,
+    "variedade": "Gesha",
+    "processo": "Lavado",
+    "torra": "Média-escura",
+    "notas": [
+      "especiarias",
+      "cacau",
+      "ameixa seca"
+    ],
+    "pontuacao_sca": 83.2,
+    "peso_g": 250,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "Moka",
+      "Prensa francesa",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 48.8,
+    "estoque": 0,
+    "id": "P007",
+    "slug": "pedra-branca-p007"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Brisa",
+    "marca": "Cereja Torrefação",
+    "origem": "Sul de Minas",
+    "pais": "BR",
+    "altitude_m": 1100,
+    "variedade": "Caturra",
+    "processo": "Honey",
+    "torra": "Média",
+    "notas": [
+      "baunilha",
+      "rapadura",
+      "castanhas"
+    ],
+    "pontuacao_sca": 85.1,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Prensa francesa",
+      "AeroPress",
+      "Coado de pano",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 65.9,
+    "estoque": 40,
+    "id": "P008",
+    "slug": "brisa-p008"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Serenata",
+    "marca": "Sítio Três Pedras",
+    "origem": "Norte Pioneiro do Paraná",
+    "pais": "BR",
+    "altitude_m": 600,
+    "variedade": "Catuaí Amarelo",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Média",
+    "notas": [
+      "chocolate ao leite",
+      "caramelo",
+      "castanhas"
+    ],
+    "pontuacao_sca": 86.2,
+    "peso_g": 500,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Prensa francesa",
+      "AeroPress",
+      "Coado de pano",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 136.44,
+    "estoque": 3,
+    "id": "P009",
+    "slug": "serenata-p009"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Rio Doce",
+    "marca": "Casa Ipê",
+    "origem": "Huehuetenango, Guatemala",
+    "pais": "GT",
+    "altitude_m": 1850,
+    "variedade": "Gesha",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Média-clara",
+    "notas": [
+      "caramelo claro",
+      "maçã verde",
+      "mel"
+    ],
+    "pontuacao_sca": 84.8,
+    "peso_g": 1000,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 270.72,
+    "estoque": 15,
+    "id": "P010",
+    "slug": "rio-doce-p010"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Colheita Tardia",
+    "marca": "Casa Ipê",
+    "origem": "Yirgacheffe, Etiópia",
+    "pais": "ET",
+    "altitude_m": 1900,
+    "variedade": "Heirloom",
+    "processo": "Natural",
+    "torra": "Média",
+    "notas": [
+      "caramelo",
+      "baunilha",
+      "frutas amarelas"
+    ],
+    "pontuacao_sca": 85.2,
+    "peso_g": 500,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 141.84,
+    "estoque": 40,
+    "id": "P011",
+    "slug": "colheita-tardia-p011"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Mirante",
+    "marca": "Grão Navegante",
+    "origem": "Chapada Diamantina",
+    "pais": "BR",
+    "altitude_m": 1000,
+    "variedade": "Caturra",
+    "processo": "Cereja descascado",
+    "torra": "Clara",
+    "notas": [
+      "bergamota",
+      "pêssego",
+      "chá preto"
+    ],
+    "pontuacao_sca": 85.7,
+    "peso_g": 250,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": true,
+    "preco": 71.3,
+    "estoque": 24,
+    "id": "P012",
+    "slug": "mirante-p012"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Garoa",
+    "marca": "Cereja Torrefação",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1800,
+    "variedade": "Arara",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Média",
+    "notas": [
+      "rapadura",
+      "baunilha",
+      "chocolate ao leite"
+    ],
+    "pontuacao_sca": 85.1,
+    "peso_g": 250,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 77.9,
+    "estoque": 15,
+    "id": "P013",
+    "slug": "garoa-p013"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Sol de Inverno",
+    "marca": "Casa Ipê",
+    "origem": "Nyeri, Quênia",
+    "pais": "KE",
+    "altitude_m": 1600,
+    "variedade": "Catuaí Amarelo",
+    "processo": "Lavado",
+    "torra": "Média-escura",
+    "notas": [
+      "especiarias",
+      "chocolate amargo",
+      "ameixa seca"
+    ],
+    "pontuacao_sca": 82.9,
+    "peso_g": 250,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 58.1,
+    "estoque": 0,
+    "id": "P014",
+    "slug": "sol-de-inverno-p014"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Várzea",
+    "marca": "Serra Alta",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1650,
+    "variedade": "SL28",
+    "processo": "Honey",
+    "torra": "Média-clara",
+    "notas": [
+      "damasco",
+      "mel",
+      "maçã verde"
+    ],
+    "pontuacao_sca": 82.5,
+    "peso_g": 500,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 98.1,
+    "estoque": 8,
+    "id": "P015",
+    "slug": "varzea-p015"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Cordilheira",
+    "marca": "Altitude Lab",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1850,
+    "variedade": "Caturra",
+    "processo": "Lavado",
+    "torra": "Média",
+    "notas": [
+      "chocolate ao leite",
+      "caramelo",
+      "baunilha"
+    ],
+    "pontuacao_sca": 82.6,
+    "peso_g": 1000,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 199.44,
+    "estoque": 40,
+    "id": "P016",
+    "slug": "cordilheira-p016"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Mata Alta",
+    "marca": "Casa Ipê",
+    "origem": "Caparaó",
+    "pais": "BR",
+    "altitude_m": 1400,
+    "variedade": "Caturra",
+    "processo": "Lavado",
+    "torra": "Média",
+    "notas": [
+      "caramelo",
+      "frutas amarelas",
+      "chocolate ao leite"
+    ],
+    "pontuacao_sca": 85.7,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Prensa francesa",
+      "AeroPress",
+      "Coado de pano",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 71.3,
+    "estoque": 24,
+    "id": "P017",
+    "slug": "mata-alta-p017"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Clareira",
+    "marca": "Casa Ipê",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 1100,
+    "variedade": "Topázio",
+    "processo": "Honey",
+    "torra": "Clara",
+    "notas": [
+      "pêssego",
+      "chá preto",
+      "limão siciliano"
+    ],
+    "pontuacao_sca": 84.3,
+    "peso_g": 250,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 58.7,
+    "estoque": 24,
+    "id": "P018",
+    "slug": "clareira-p018"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Lua Cheia",
+    "marca": "Sítio Três Pedras",
+    "origem": "Chapada Diamantina",
+    "pais": "BR",
+    "altitude_m": 1350,
+    "variedade": "Gesha",
+    "processo": "Lavado",
+    "torra": "Média-clara",
+    "notas": [
+      "flor de laranjeira",
+      "laranja",
+      "caramelo claro"
+    ],
+    "pontuacao_sca": 86.3,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 76.7,
+    "estoque": 8,
+    "id": "P019",
+    "slug": "lua-cheia-p019"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Alvorada",
+    "marca": "Cereja Torrefação",
+    "origem": "Matas de Rondônia",
+    "pais": "BR",
+    "altitude_m": 300,
+    "variedade": "Mundo Novo",
+    "processo": "Lavado",
+    "torra": "Média",
+    "notas": [
+      "chocolate ao leite",
+      "caramelo",
+      "baunilha"
+    ],
+    "pontuacao_sca": 85.1,
+    "peso_g": 500,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 118.62,
+    "estoque": 3,
+    "id": "P020",
+    "slug": "alvorada-p020"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Encosta",
+    "marca": "Cereja Torrefação",
+    "origem": "Matas de Rondônia",
+    "pais": "BR",
+    "altitude_m": 300,
+    "variedade": "Catucaí",
+    "processo": "Natural",
+    "torra": "Média-clara",
+    "notas": [
+      "flor de laranjeira",
+      "laranja",
+      "damasco"
+    ],
+    "pontuacao_sca": 82.9,
+    "peso_g": 250,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 46.1,
+    "estoque": 40,
+    "id": "P021",
+    "slug": "encosta-p021"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Bruma",
+    "marca": "Cereja Torrefação",
+    "origem": "Chapada Diamantina",
+    "pais": "BR",
+    "altitude_m": 1300,
+    "variedade": "Arara",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Média-escura",
+    "notas": [
+      "cacau",
+      "chocolate amargo",
+      "nozes"
+    ],
+    "pontuacao_sca": 84.0,
+    "peso_g": 500,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 100.8,
+    "estoque": 3,
+    "id": "P022",
+    "slug": "bruma-p022"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Campo Alto",
+    "marca": "Sítio Três Pedras",
+    "origem": "Cerrado Mineiro",
+    "pais": "BR",
+    "altitude_m": 1200,
+    "variedade": "Arara",
+    "processo": "Honey",
+    "torra": "Clara",
+    "notas": [
+      "bergamota",
+      "chá preto",
+      "limão siciliano"
+    ],
+    "pontuacao_sca": 84.7,
+    "peso_g": 1000,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 224.28,
+    "estoque": 24,
+    "id": "P023",
+    "slug": "campo-alto-p023"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Ventania",
+    "marca": "Altitude Lab",
+    "origem": "Yirgacheffe, Etiópia",
+    "pais": "ET",
+    "altitude_m": 1950,
+    "variedade": "Heirloom",
+    "processo": "Cereja descascado",
+    "torra": "Média-clara",
+    "notas": [
+      "laranja",
+      "maçã verde",
+      "mel"
+    ],
+    "pontuacao_sca": 82.1,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 50.9,
+    "estoque": 8,
+    "id": "P024",
+    "slug": "ventania-p024"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Orvalho",
+    "marca": "Sítio Três Pedras",
+    "origem": "Yirgacheffe, Etiópia",
+    "pais": "ET",
+    "altitude_m": 2100,
+    "variedade": "Heirloom",
+    "processo": "Cereja descascado",
+    "torra": "Média-clara",
+    "notas": [
+      "laranja",
+      "maçã verde",
+      "damasco"
+    ],
+    "pontuacao_sca": 85.4,
+    "peso_g": 500,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 145.08,
+    "estoque": 40,
+    "id": "P025",
+    "slug": "orvalho-p025"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Riacho",
+    "marca": "Sítio Três Pedras",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1500,
+    "variedade": "Gesha",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Escura",
+    "notas": [
+      "tabaco",
+      "chocolate 70%",
+      "cacau intenso"
+    ],
+    "pontuacao_sca": 86.7,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 92.3,
+    "estoque": 3,
+    "id": "P026",
+    "slug": "riacho-p026"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Seriema",
+    "marca": "Grão Navegante",
+    "origem": "Cerrado Mineiro",
+    "pais": "BR",
+    "altitude_m": 1150,
+    "variedade": "Caturra",
+    "processo": "Honey",
+    "torra": "Média-clara",
+    "notas": [
+      "caramelo claro",
+      "flor de laranjeira",
+      "damasco"
+    ],
+    "pontuacao_sca": 84.8,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 63.2,
+    "estoque": 0,
+    "id": "P027",
+    "slug": "seriema-p027"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Jequitibá",
+    "marca": "Serra Alta",
+    "origem": "Yirgacheffe, Etiópia",
+    "pais": "ET",
+    "altitude_m": 2150,
+    "variedade": "Heirloom",
+    "processo": "Honey",
+    "torra": "Clara",
+    "notas": [
+      "jasmim",
+      "frutas vermelhas",
+      "bergamota"
+    ],
+    "pontuacao_sca": 83.1,
+    "peso_g": 500,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 107.82,
+    "estoque": 8,
+    "id": "P028",
+    "slug": "jequitiba-p028"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Araucária",
+    "marca": "Sítio Três Pedras",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1850,
+    "variedade": "SL28",
+    "processo": "Honey",
+    "torra": "Escura",
+    "notas": [
+      "tabaco",
+      "chocolate 70%",
+      "caramelo queimado"
+    ],
+    "pontuacao_sca": 82.9,
+    "peso_g": 500,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 104.58,
+    "estoque": 24,
+    "id": "P029",
+    "slug": "araucaria-p029"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Sabiá",
+    "marca": "Grão Navegante",
+    "origem": "Chapada Diamantina",
+    "pais": "BR",
+    "altitude_m": 1050,
+    "variedade": "Arara",
+    "processo": "Cereja descascado",
+    "torra": "Média-escura",
+    "notas": [
+      "cacau",
+      "chocolate amargo",
+      "nozes"
+    ],
+    "pontuacao_sca": 83.9,
+    "peso_g": 1000,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 198.36,
+    "estoque": 40,
+    "id": "P030",
+    "slug": "sabia-p030"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Aurora Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 950,
+    "variedade": "Arara",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Clara",
+    "notas": [
+      "limão siciliano",
+      "jasmim",
+      "bergamota"
+    ],
+    "pontuacao_sca": 88.2,
+    "peso_g": 500,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 168.84,
+    "estoque": 15,
+    "id": "P031",
+    "slug": "aurora-reserva-p031"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Neblina Reserva",
+    "marca": "Altitude Lab",
+    "origem": "Cerrado Mineiro",
+    "pais": "BR",
+    "altitude_m": 950,
+    "variedade": "Arara",
+    "processo": "Lavado",
+    "torra": "Média-clara",
+    "notas": [
+      "maçã verde",
+      "laranja",
+      "flor de laranjeira"
+    ],
+    "pontuacao_sca": 87.2,
+    "peso_g": 1000,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 305.28,
+    "estoque": 0,
+    "id": "P032",
+    "slug": "neblina-reserva-p032"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Ladeira Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Caparaó",
+    "pais": "BR",
+    "altitude_m": 1400,
+    "variedade": "Caturra",
+    "processo": "Honey",
+    "torra": "Escura",
+    "notas": [
+      "caramelo queimado",
+      "chocolate 70%",
+      "cacau intenso"
+    ],
+    "pontuacao_sca": 86.0,
+    "peso_g": 250,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 74.0,
+    "estoque": 0,
+    "id": "P033",
+    "slug": "ladeira-reserva-p033"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Terra Roxa Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Chapada Diamantina",
+    "pais": "BR",
+    "altitude_m": 1100,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Clara",
+    "notas": [
+      "frutas vermelhas",
+      "chá preto",
+      "bergamota"
+    ],
+    "pontuacao_sca": 85.2,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 66.8,
+    "estoque": 3,
+    "id": "P034",
+    "slug": "terra-roxa-reserva-p034"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Cerejeira Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Yirgacheffe, Etiópia",
+    "pais": "ET",
+    "altitude_m": 1800,
+    "variedade": "Heirloom",
+    "processo": "Cereja descascado",
+    "torra": "Escura",
+    "notas": [
+      "madeira",
+      "cacau intenso",
+      "caramelo queimado"
+    ],
+    "pontuacao_sca": 86.6,
+    "peso_g": 500,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 164.52,
+    "estoque": 0,
+    "id": "P035",
+    "slug": "cerejeira-reserva-p035"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Vento Norte Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Nyeri, Quênia",
+    "pais": "KE",
+    "altitude_m": 1600,
+    "variedade": "Topázio",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Clara",
+    "notas": [
+      "jasmim",
+      "chá preto",
+      "bergamota"
+    ],
+    "pontuacao_sca": 84.4,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 71.6,
+    "estoque": 8,
+    "id": "P036",
+    "slug": "vento-norte-reserva-p036"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Pedra Branca Reserva",
+    "marca": "Casa Ipê",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1700,
+    "variedade": "Catuaí Amarelo",
+    "processo": "Natural",
+    "torra": "Média-clara",
+    "notas": [
+      "mel",
+      "flor de laranjeira",
+      "maçã verde"
+    ],
+    "pontuacao_sca": 86.4,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 89.6,
+    "estoque": 40,
+    "id": "P037",
+    "slug": "pedra-branca-reserva-p037"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Brisa Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 900,
+    "variedade": "Mundo Novo",
+    "processo": "Lavado",
+    "torra": "Escura",
+    "notas": [
+      "cacau intenso",
+      "defumado",
+      "chocolate 70%"
+    ],
+    "pontuacao_sca": 85.3,
+    "peso_g": 250,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "Moka",
+      "Prensa francesa"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 67.7,
+    "estoque": 40,
+    "id": "P038",
+    "slug": "brisa-reserva-p038"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Serenata Reserva",
+    "marca": "Altitude Lab",
+    "origem": "Yirgacheffe, Etiópia",
+    "pais": "ET",
+    "altitude_m": 1850,
+    "variedade": "Heirloom",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Escura",
+    "notas": [
+      "defumado",
+      "madeira",
+      "chocolate 70%"
+    ],
+    "pontuacao_sca": 88.4,
+    "peso_g": 1000,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 387.36,
+    "estoque": 24,
+    "id": "P039",
+    "slug": "serenata-reserva-p039"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Rio Doce Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 900,
+    "variedade": "Mundo Novo",
+    "processo": "Cereja descascado",
+    "torra": "Média-clara",
+    "notas": [
+      "laranja",
+      "flor de laranjeira",
+      "maçã verde"
+    ],
+    "pontuacao_sca": 85.5,
+    "peso_g": 250,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 69.5,
+    "estoque": 15,
+    "id": "P040",
+    "slug": "rio-doce-reserva-p040"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Colheita Tardia Reserva",
+    "marca": "Sítio Três Pedras",
+    "origem": "Cerrado Mineiro",
+    "pais": "BR",
+    "altitude_m": 950,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Lavado",
+    "torra": "Clara",
+    "notas": [
+      "jasmim",
+      "bergamota",
+      "limão siciliano"
+    ],
+    "pontuacao_sca": 87.0,
+    "peso_g": 1000,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 298.8,
+    "estoque": 3,
+    "id": "P041",
+    "slug": "colheita-tardia-reserva-p041"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Mirante Reserva",
+    "marca": "Casa Ipê",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 900,
+    "variedade": "Catuaí Amarelo",
+    "processo": "Lavado",
+    "torra": "Média-escura",
+    "notas": [
+      "nozes",
+      "melaço",
+      "ameixa seca"
+    ],
+    "pontuacao_sca": 85.2,
+    "peso_g": 500,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "Moka",
+      "Prensa francesa",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 120.24,
+    "estoque": 0,
+    "id": "P042",
+    "slug": "mirante-reserva-p042"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Garoa Reserva",
+    "marca": "Sítio Três Pedras",
+    "origem": "Caparaó",
+    "pais": "BR",
+    "altitude_m": 1000,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Natural",
+    "torra": "Média-escura",
+    "notas": [
+      "melaço",
+      "chocolate amargo",
+      "nozes"
+    ],
+    "pontuacao_sca": 86.1,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 74.9,
+    "estoque": 15,
+    "id": "P043",
+    "slug": "garoa-reserva-p043"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Sol de Inverno Reserva",
+    "marca": "Serra Alta",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1600,
+    "variedade": "Gesha",
+    "processo": "Honey",
+    "torra": "Clara",
+    "notas": [
+      "bergamota",
+      "chá preto",
+      "frutas vermelhas"
+    ],
+    "pontuacao_sca": 85.1,
+    "peso_g": 500,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 140.22,
+    "estoque": 3,
+    "id": "P044",
+    "slug": "sol-de-inverno-reserva-p044"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Várzea Reserva",
+    "marca": "Sítio Três Pedras",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 1100,
+    "variedade": "Arara",
+    "processo": "Honey",
+    "torra": "Escura",
+    "notas": [
+      "cacau intenso",
+      "chocolate 70%",
+      "tabaco"
+    ],
+    "pontuacao_sca": 84.2,
+    "peso_g": 1000,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": true,
+    "preco": 208.08,
+    "estoque": 0,
+    "id": "P045",
+    "slug": "varzea-reserva-p045"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Cordilheira Reserva",
+    "marca": "Altitude Lab",
+    "origem": "Mantiqueira de Minas",
+    "pais": "BR",
+    "altitude_m": 1100,
+    "variedade": "Arara",
+    "processo": "Natural",
+    "torra": "Clara",
+    "notas": [
+      "frutas vermelhas",
+      "pêssego",
+      "limão siciliano"
+    ],
+    "pontuacao_sca": 86.9,
+    "peso_g": 250,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 82.1,
+    "estoque": 15,
+    "id": "P046",
+    "slug": "cordilheira-reserva-p046"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Mata Alta Reserva",
+    "marca": "Cereja Torrefação",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 1150,
+    "variedade": "Caturra",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Clara",
+    "notas": [
+      "chá preto",
+      "jasmim",
+      "frutas vermelhas"
+    ],
+    "pontuacao_sca": 87.6,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 88.4,
+    "estoque": 3,
+    "id": "P047",
+    "slug": "mata-alta-reserva-p047"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Clareira Reserva",
+    "marca": "Altitude Lab",
+    "origem": "Huehuetenango, Guatemala",
+    "pais": "GT",
+    "altitude_m": 1550,
+    "variedade": "Mundo Novo",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Média-clara",
+    "notas": [
+      "flor de laranjeira",
+      "maçã verde",
+      "laranja"
+    ],
+    "pontuacao_sca": 87.3,
+    "peso_g": 1000,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 351.72,
+    "estoque": 24,
+    "id": "P048",
+    "slug": "clareira-reserva-p048"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Lua Cheia Reserva",
+    "marca": "Cereja Torrefação",
+    "origem": "Nyeri, Quênia",
+    "pais": "KE",
+    "altitude_m": 1850,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Lavado",
+    "torra": "Média-clara",
+    "notas": [
+      "caramelo claro",
+      "flor de laranjeira",
+      "mel"
+    ],
+    "pontuacao_sca": 86.7,
+    "peso_g": 500,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 166.14,
+    "estoque": 0,
+    "id": "P049",
+    "slug": "lua-cheia-reserva-p049"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Alvorada Reserva",
+    "marca": "Cereja Torrefação",
+    "origem": "Matas de Rondônia",
+    "pais": "BR",
+    "altitude_m": 350,
+    "variedade": "Caturra",
+    "processo": "Lavado",
+    "torra": "Clara",
+    "notas": [
+      "frutas vermelhas",
+      "pêssego",
+      "chá preto"
+    ],
+    "pontuacao_sca": 85.2,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 66.8,
+    "estoque": 15,
+    "id": "P050",
+    "slug": "alvorada-reserva-p050"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Encosta Reserva",
+    "marca": "Serra Alta",
+    "origem": "Matas de Rondônia",
+    "pais": "BR",
+    "altitude_m": 350,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Natural",
+    "torra": "Média-escura",
+    "notas": [
+      "melaço",
+      "cacau",
+      "chocolate amargo"
+    ],
+    "pontuacao_sca": 88.5,
+    "peso_g": 250,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "Moka",
+      "Prensa francesa",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 96.5,
+    "estoque": 24,
+    "id": "P051",
+    "slug": "encosta-reserva-p051"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Bruma Reserva",
+    "marca": "Sítio Três Pedras",
+    "origem": "Matas de Rondônia",
+    "pais": "BR",
+    "altitude_m": 200,
+    "variedade": "Gesha",
+    "processo": "Cereja descascado",
+    "torra": "Média",
+    "notas": [
+      "baunilha",
+      "frutas amarelas",
+      "castanhas"
+    ],
+    "pontuacao_sca": 85.9,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Prensa francesa",
+      "AeroPress",
+      "Coado de pano",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 73.1,
+    "estoque": 8,
+    "id": "P052",
+    "slug": "bruma-reserva-p052"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Campo Alto Reserva",
+    "marca": "Casa Ipê",
+    "origem": "Cerrado Mineiro",
+    "pais": "BR",
+    "altitude_m": 1050,
+    "variedade": "SL28",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Escura",
+    "notas": [
+      "madeira",
+      "cacau intenso",
+      "tabaco"
+    ],
+    "pontuacao_sca": 85.3,
+    "peso_g": 250,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "Moka",
+      "Prensa francesa"
+    ],
+    "perfil": {
+      "acidez": 1,
+      "corpo": 5,
+      "docura": 2
+    },
+    "descafeinado": false,
+    "preco": 67.7,
+    "estoque": 0,
+    "id": "P053",
+    "slug": "campo-alto-reserva-p053"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Ventania Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Matas de Rondônia",
+    "pais": "BR",
+    "altitude_m": 350,
+    "variedade": "Gesha",
+    "processo": "Lavado",
+    "torra": "Média-escura",
+    "notas": [
+      "chocolate amargo",
+      "melaço",
+      "ameixa seca"
+    ],
+    "pontuacao_sca": 86.4,
+    "peso_g": 250,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 77.6,
+    "estoque": 8,
+    "id": "P054",
+    "slug": "ventania-reserva-p054"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Orvalho Reserva",
+    "marca": "Cereja Torrefação",
+    "origem": "Caparaó",
+    "pais": "BR",
+    "altitude_m": 1200,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Lavado",
+    "torra": "Média-escura",
+    "notas": [
+      "melaço",
+      "chocolate amargo",
+      "cacau"
+    ],
+    "pontuacao_sca": 88.2,
+    "peso_g": 250,
+    "forma": "Grãos",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "Prensa francesa",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 93.8,
+    "estoque": 15,
+    "id": "P055",
+    "slug": "orvalho-reserva-p055"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Riacho Reserva",
+    "marca": "Grão Navegante",
+    "origem": "Huila, Colômbia",
+    "pais": "CO",
+    "altitude_m": 1550,
+    "variedade": "Catucaí",
+    "processo": "Natural",
+    "torra": "Clara",
+    "notas": [
+      "frutas vermelhas",
+      "chá preto",
+      "limão siciliano"
+    ],
+    "pontuacao_sca": 88.2,
+    "peso_g": 500,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 190.44,
+    "estoque": 3,
+    "id": "P056",
+    "slug": "riacho-reserva-p056"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Seriema Reserva",
+    "marca": "Serra Alta",
+    "origem": "Alta Mogiana",
+    "pais": "BR",
+    "altitude_m": 1150,
+    "variedade": "SL28",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Média-escura",
+    "notas": [
+      "especiarias",
+      "ameixa seca",
+      "nozes"
+    ],
+    "pontuacao_sca": 85.4,
+    "peso_g": 500,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 2,
+      "corpo": 4,
+      "docura": 3
+    },
+    "descafeinado": false,
+    "preco": 123.48,
+    "estoque": 40,
+    "id": "P057",
+    "slug": "seriema-reserva-p057"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Jequitibá Reserva",
+    "marca": "Altitude Lab",
+    "origem": "Sul de Minas",
+    "pais": "BR",
+    "altitude_m": 900,
+    "variedade": "Gesha",
+    "processo": "Honey",
+    "torra": "Clara",
+    "notas": [
+      "limão siciliano",
+      "frutas vermelhas",
+      "bergamota"
+    ],
+    "pontuacao_sca": 87.0,
+    "peso_g": 250,
+    "forma": "Moído para filtro",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress"
+    ],
+    "perfil": {
+      "acidez": 5,
+      "corpo": 2,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 83.0,
+    "estoque": 15,
+    "id": "P058",
+    "slug": "jequitiba-reserva-p058"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Araucária Reserva",
+    "marca": "Cereja Torrefação",
+    "origem": "Caparaó",
+    "pais": "BR",
+    "altitude_m": 1150,
+    "variedade": "Topázio",
+    "processo": "Lavado",
+    "torra": "Média",
+    "notas": [
+      "rapadura",
+      "frutas amarelas",
+      "baunilha"
+    ],
+    "pontuacao_sca": 85.2,
+    "peso_g": 500,
+    "forma": "Moído para espresso",
+    "metodos": [
+      "Espresso",
+      "Moka"
+    ],
+    "perfil": {
+      "acidez": 3,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 120.24,
+    "estoque": 0,
+    "id": "P059",
+    "slug": "araucaria-reserva-p059"
+  },
+  {
+    "categoria": "cafe",
+    "nome": "Sabiá Reserva",
+    "marca": "Altitude Lab",
+    "origem": "Cerrado Mineiro",
+    "pais": "BR",
+    "altitude_m": 1000,
+    "variedade": "Bourbon Amarelo",
+    "processo": "Fermentação anaeróbica",
+    "torra": "Média-clara",
+    "notas": [
+      "damasco",
+      "mel",
+      "caramelo claro"
+    ],
+    "pontuacao_sca": 84.9,
+    "peso_g": 1000,
+    "forma": "Grãos",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano"
+    ],
+    "perfil": {
+      "acidez": 4,
+      "corpo": 3,
+      "docura": 4
+    },
+    "descafeinado": false,
+    "preco": 230.76,
+    "estoque": 3,
+    "id": "P060",
+    "slug": "sabia-reserva-p060"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "moedor",
+    "nome": "Moedor manual Trilha",
+    "marca": "Vale",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Prensa francesa",
+      "Coado de pano",
+      "Moka"
+    ],
+    "specs": {
+      "regulagens": 40,
+      "mos": "cônicas de aço",
+      "espresso": false
+    },
+    "preco": 289.9,
+    "estoque": 2,
+    "id": "P061",
+    "slug": "moedor-manual-trilha-p061"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "moedor",
+    "nome": "Moedor manual Trilha Pro",
+    "marca": "Ponte",
+    "metodos": [
+      "Espresso",
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Prensa francesa",
+      "Moka"
+    ],
+    "specs": {
+      "regulagens": 90,
+      "mos": "cônicas de aço",
+      "espresso": true
+    },
+    "preco": 649.0,
+    "estoque": 14,
+    "id": "P062",
+    "slug": "moedor-manual-trilha-pro-p062"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "moedor",
+    "nome": "Moedor elétrico Rotor 40",
+    "marca": "Vale",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "Prensa francesa",
+      "Coado de pano",
+      "Moka"
+    ],
+    "specs": {
+      "regulagens": 40,
+      "mos": "cônicas",
+      "espresso": false
+    },
+    "preco": 899.0,
+    "estoque": 5,
+    "id": "P063",
+    "slug": "moedor-eletrico-rotor-40-p063"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "moedor",
+    "nome": "Moedor elétrico Rotor 60 Espresso",
+    "marca": "Trilha",
+    "metodos": [
+      "Espresso",
+      "Moka",
+      "AeroPress",
+      "V60"
+    ],
+    "specs": {
+      "regulagens": 60,
+      "mos": "planas 64 mm",
+      "espresso": true
+    },
+    "preco": 2190.0,
+    "estoque": 5,
+    "id": "P064",
+    "slug": "moedor-eletrico-rotor-60-espresso-p064"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Suporte V60 01 cerâmica",
+    "marca": "Ponte",
+    "metodos": [
+      "V60"
+    ],
+    "specs": {
+      "filtro": "V60 01",
+      "xicaras": "1-2"
+    },
+    "preco": 119.0,
+    "estoque": 14,
+    "id": "P065",
+    "slug": "suporte-v60-01-ceramica-p065"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Suporte V60 02 cerâmica",
+    "marca": "Trilha",
+    "metodos": [
+      "V60"
+    ],
+    "specs": {
+      "filtro": "V60 02",
+      "xicaras": "1-4"
+    },
+    "preco": 139.0,
+    "estoque": 0,
+    "id": "P066",
+    "slug": "suporte-v60-02-ceramica-p066"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Suporte V60 02 plástico",
+    "marca": "Grama",
+    "metodos": [
+      "V60"
+    ],
+    "specs": {
+      "filtro": "V60 02",
+      "xicaras": "1-4"
+    },
+    "preco": 59.9,
+    "estoque": 9,
+    "id": "P067",
+    "slug": "suporte-v60-02-plastico-p067"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Chemex 6 xícaras",
+    "marca": "Grama",
+    "metodos": [
+      "Chemex"
+    ],
+    "specs": {
+      "filtro": "Chemex 6",
+      "xicaras": "até 6"
+    },
+    "preco": 329.0,
+    "estoque": 14,
+    "id": "P068",
+    "slug": "chemex-6-xicaras-p068"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Prensa francesa Vale 600 ml",
+    "marca": "Trilha",
+    "metodos": [
+      "Prensa francesa"
+    ],
+    "specs": {
+      "capacidade_ml": 600
+    },
+    "preco": 159.0,
+    "estoque": 9,
+    "id": "P069",
+    "slug": "prensa-francesa-vale-600-ml-p069"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Prensa francesa Vale 1 L",
+    "marca": "Ponte",
+    "metodos": [
+      "Prensa francesa"
+    ],
+    "specs": {
+      "capacidade_ml": 1000
+    },
+    "preco": 199.0,
+    "estoque": 5,
+    "id": "P070",
+    "slug": "prensa-francesa-vale-1-l-p070"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "AeroPress clássica",
+    "marca": "Vale",
+    "metodos": [
+      "AeroPress"
+    ],
+    "specs": {
+      "filtro": "AeroPress"
+    },
+    "preco": 279.0,
+    "estoque": 9,
+    "id": "P071",
+    "slug": "aeropress-classica-p071"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "AeroPress Go",
+    "marca": "Ponte",
+    "metodos": [
+      "AeroPress"
+    ],
+    "specs": {
+      "filtro": "AeroPress",
+      "viagem": true
+    },
+    "preco": 299.0,
+    "estoque": 14,
+    "id": "P072",
+    "slug": "aeropress-go-p072"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Moka Ponte 3 xícaras",
+    "marca": "Ponte",
+    "metodos": [
+      "Moka"
+    ],
+    "specs": {
+      "capacidade_xicaras": 3,
+      "inducao": false
+    },
+    "preco": 149.0,
+    "estoque": 2,
+    "id": "P073",
+    "slug": "moka-ponte-3-xicaras-p073"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Moka Ponte 6 xícaras indução",
+    "marca": "Raiz",
+    "metodos": [
+      "Moka"
+    ],
+    "specs": {
+      "capacidade_xicaras": 6,
+      "inducao": true
+    },
+    "preco": 229.0,
+    "estoque": 14,
+    "id": "P074",
+    "slug": "moka-ponte-6-xicaras-inducao-p074"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Coador de pano Raiz com suporte",
+    "marca": "Trilha",
+    "metodos": [
+      "Coado de pano"
+    ],
+    "specs": {
+      "filtro": "pano"
+    },
+    "preco": 69.9,
+    "estoque": 0,
+    "id": "P075",
+    "slug": "coador-de-pano-raiz-com-suporte-p075"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Máquina espresso Pressão 15",
+    "marca": "Ponte",
+    "metodos": [
+      "Espresso"
+    ],
+    "specs": {
+      "bar": 15,
+      "vaporizador": true
+    },
+    "preco": 1890.0,
+    "estoque": 2,
+    "id": "P076",
+    "slug": "maquina-espresso-pressao-15-p076"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "cafeteira",
+    "nome": "Máquina espresso Pressão Compact",
+    "marca": "Grama",
+    "metodos": [
+      "Espresso"
+    ],
+    "specs": {
+      "bar": 15,
+      "vaporizador": false
+    },
+    "preco": 1290.0,
+    "estoque": 9,
+    "id": "P077",
+    "slug": "maquina-espresso-pressao-compact-p077"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "chaleira",
+    "nome": "Chaleira bico de ganso 600 ml",
+    "marca": "Grama",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "Coado de pano"
+    ],
+    "specs": {
+      "eletrica": false
+    },
+    "preco": 189.0,
+    "estoque": 9,
+    "id": "P078",
+    "slug": "chaleira-bico-de-ganso-600-ml-p078"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "chaleira",
+    "nome": "Chaleira elétrica Precisão 900 ml",
+    "marca": "Ponte",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Coado de pano",
+      "Prensa francesa"
+    ],
+    "specs": {
+      "eletrica": true,
+      "controle_temperatura": true
+    },
+    "preco": 549.0,
+    "estoque": 0,
+    "id": "P079",
+    "slug": "chaleira-eletrica-precisao-900-ml-p079"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "balanca",
+    "nome": "Balança Grama 0,1 g com timer",
+    "marca": "Trilha",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "AeroPress",
+      "Espresso",
+      "Prensa francesa"
+    ],
+    "specs": {
+      "precisao_g": 0.1,
+      "timer": true
+    },
+    "preco": 169.0,
+    "estoque": 0,
+    "id": "P080",
+    "slug": "balanca-grama-0-1-g-com-timer-p080"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "balanca",
+    "nome": "Balança Grama Espresso",
+    "marca": "Grama",
+    "metodos": [
+      "Espresso"
+    ],
+    "specs": {
+      "precisao_g": 0.1,
+      "timer": true,
+      "cabe_na_bandeja": true
+    },
+    "preco": 259.0,
+    "estoque": 9,
+    "id": "P081",
+    "slug": "balanca-grama-espresso-p081"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Termômetro culinário digital",
+    "marca": "Raiz",
+    "metodos": [
+      "V60",
+      "Chemex",
+      "Coado de pano",
+      "Prensa francesa"
+    ],
+    "specs": {},
+    "preco": 49.9,
+    "estoque": 9,
+    "id": "P082",
+    "slug": "termometro-culinario-digital-p082"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Jarra de leite inox 350 ml",
+    "marca": "Vale",
+    "metodos": [
+      "Espresso"
+    ],
+    "specs": {},
+    "preco": 89.0,
+    "estoque": 0,
+    "id": "P083",
+    "slug": "jarra-de-leite-inox-350-ml-p083"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Tamper 51 mm",
+    "marca": "Grama",
+    "metodos": [
+      "Espresso"
+    ],
+    "specs": {
+      "diametro_mm": 51
+    },
+    "preco": 99.0,
+    "estoque": 14,
+    "id": "P084",
+    "slug": "tamper-51-mm-p084"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Tamper 58 mm",
+    "marca": "Grama",
+    "metodos": [
+      "Espresso"
+    ],
+    "specs": {
+      "diametro_mm": 58
+    },
+    "preco": 129.0,
+    "estoque": 9,
+    "id": "P085",
+    "slug": "tamper-58-mm-p085"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Dosador magnético 58 mm",
+    "marca": "Trilha",
+    "metodos": [
+      "Espresso"
+    ],
+    "specs": {
+      "diametro_mm": 58
+    },
+    "preco": 79.0,
+    "estoque": 0,
+    "id": "P086",
+    "slug": "dosador-magnetico-58-mm-p086"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Caneca térmica Trilha 350 ml",
+    "marca": "Trilha",
+    "metodos": [],
+    "specs": {},
+    "preco": 119.0,
+    "estoque": 2,
+    "id": "P087",
+    "slug": "caneca-termica-trilha-350-ml-p087"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Pote hermético com válvula 500 g",
+    "marca": "Trilha",
+    "metodos": [],
+    "specs": {},
+    "preco": 89.9,
+    "estoque": 14,
+    "id": "P088",
+    "slug": "pote-hermetico-com-valvula-500-g-p088"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Servidor de vidro 600 ml",
+    "marca": "Vale",
+    "metodos": [
+      "V60",
+      "Chemex"
+    ],
+    "specs": {},
+    "preco": 99.0,
+    "estoque": 9,
+    "id": "P089",
+    "slug": "servidor-de-vidro-600-ml-p089"
+  },
+  {
+    "categoria": "equipamento",
+    "tipo": "acessorio",
+    "nome": "Kit xícaras de espresso (2)",
+    "marca": "Vale",
+    "metodos": [
+      "Espresso"
+    ],
+    "specs": {},
+    "preco": 79.9,
+    "estoque": 14,
+    "id": "P090",
+    "slug": "kit-xicaras-de-espresso-2-p090"
+  },
+  {
+    "categoria": "filtro",
+    "nome": "Filtro de papel V60 01 (100 un.)",
+    "marca": "Moenda",
+    "compativel_com": "V60 01",
+    "preco": 24.9,
+    "estoque": 0,
+    "id": "P091",
+    "slug": "filtro-de-papel-v60-01-100-un-p091"
+  },
+  {
+    "categoria": "filtro",
+    "nome": "Filtro de papel V60 02 (100 un.)",
+    "marca": "Moenda",
+    "compativel_com": "V60 02",
+    "preco": 26.9,
+    "estoque": 0,
+    "id": "P092",
+    "slug": "filtro-de-papel-v60-02-100-un-p092"
+  },
+  {
+    "categoria": "filtro",
+    "nome": "Filtro de papel Chemex 6 (100 un.)",
+    "marca": "Moenda",
+    "compativel_com": "Chemex 6",
+    "preco": 64.9,
+    "estoque": 20,
+    "id": "P093",
+    "slug": "filtro-de-papel-chemex-6-100-un-p093"
+  },
+  {
+    "categoria": "filtro",
+    "nome": "Filtro de papel AeroPress (350 un.)",
+    "marca": "Moenda",
+    "compativel_com": "AeroPress",
+    "preco": 39.9,
+    "estoque": 20,
+    "id": "P094",
+    "slug": "filtro-de-papel-aeropress-350-un-p094"
+  },
+  {
+    "categoria": "filtro",
+    "nome": "Filtro de pano reutilizável",
+    "marca": "Moenda",
+    "compativel_com": "pano",
+    "preco": 19.9,
+    "estoque": 0,
+    "id": "P095",
+    "slug": "filtro-de-pano-reutilizavel-p095"
+  },
+  {
+    "categoria": "filtro",
+    "nome": "Filtro de papel 103 (40 un.)",
+    "marca": "Moenda",
+    "compativel_com": "103",
+    "preco": 9.9,
+    "estoque": 50,
+    "id": "P096",
+    "slug": "filtro-de-papel-103-40-un-p096"
+  },
+  {
+    "categoria": "filtro",
+    "nome": "Filtro metálico V60 02",
+    "marca": "Moenda",
+    "compativel_com": "V60 02",
+    "preco": 79.0,
+    "estoque": 20,
+    "id": "P097",
+    "slug": "filtro-metalico-v60-02-p097"
+  },
+  {
+    "categoria": "filtro",
+    "nome": "Filtro metálico AeroPress",
+    "marca": "Moenda",
+    "compativel_com": "AeroPress",
+    "preco": 69.0,
+    "estoque": 50,
+    "id": "P098",
+    "slug": "filtro-metalico-aeropress-p098"
+  },
+  {
+    "categoria": "kit",
+    "nome": "Kit Começando no V60",
+    "marca": "Moenda",
+    "itens": [
+      "Suporte V60 02 plástico",
+      "Filtro de papel V60 02 (100 un.)",
+      "Balança Grama 0,1 g com timer"
+    ],
+    "metodos": [
+      "V60"
+    ],
+    "preco": 239.0,
+    "estoque": 12,
+    "id": "P099",
+    "slug": "kit-comecando-no-v60-p099"
+  },
+  {
+    "categoria": "kit",
+    "nome": "Kit Espresso em Casa",
+    "marca": "Moenda",
+    "itens": [
+      "Tamper 58 mm",
+      "Jarra de leite inox 350 ml",
+      "Balança Grama Espresso"
+    ],
+    "metodos": [
+      "Espresso"
+    ],
+    "preco": 429.0,
+    "estoque": 6,
+    "id": "P100",
+    "slug": "kit-espresso-em-casa-p100"
+  },
+  {
+    "categoria": "kit",
+    "nome": "Kit Prensa e Moedor",
+    "marca": "Moenda",
+    "itens": [
+      "Prensa francesa Vale 600 ml",
+      "Moedor manual Trilha"
+    ],
+    "metodos": [
+      "Prensa francesa"
+    ],
+    "preco": 419.0,
+    "estoque": 4,
+    "id": "P101",
+    "slug": "kit-prensa-e-moedor-p101"
+  },
+  {
+    "categoria": "kit",
+    "nome": "Kit Presente Degustação",
+    "marca": "Moenda",
+    "itens": [
+      "3 cafés de 250 g de origens diferentes"
+    ],
+    "metodos": [],
+    "preco": 159.0,
+    "estoque": 20,
+    "id": "P102",
+    "slug": "kit-presente-degustacao-p102"
+  },
+  {
+    "categoria": "assinatura",
+    "nome": "Assinatura Descoberta",
+    "marca": "Moenda",
+    "descricao": "1 café de 250 g por mês, escolhido pela curadoria",
+    "frequencia": "mensal",
+    "preco": 54.9,
+    "estoque": 999,
+    "id": "P103",
+    "slug": "assinatura-descoberta-p103"
+  },
+  {
+    "categoria": "assinatura",
+    "nome": "Assinatura Dupla",
+    "marca": "Moenda",
+    "descricao": "2 cafés de 250 g por mês, perfis diferentes",
+    "frequencia": "mensal",
+    "preco": 99.9,
+    "estoque": 999,
+    "id": "P104",
+    "slug": "assinatura-dupla-p104"
+  }
+]

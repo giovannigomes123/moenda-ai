@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Paleta Moenda: verde da folha do café (marca), vermelho da cereja (compra), papel levemente esverdeado. */
+:root {
+  --papel: #f4f5f1;
+  --cartao: #ffffff;
+  --tinta: #16201b;
+  --tinta-2: #3b4640;
+  --apagado: #69736c;
+  --linha: #dde2dc;
+  --folha: #24533f;
+  --folha-suave: #e3ede7;
+  --cereja: #b5352e;
+  --cereja-suave: #f7e4e2;
+  --ouro: #a8741f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papel: #0f1411;
+    --cartao: #171e1a;
+    --tinta: #e8eee9;
+    --tinta-2: #c3ccc5;
+    --apagado: #94a098;
+    --linha: #28312c;
+    --folha: #7cbb98;
+    --folha-suave: #1c2b23;
+    --cereja: #e3685f;
+    --cereja-suave: #34201e;
+    --ouro: #d9a54c;
+  }
+}
+
+:root[data-theme="dark"] {
+  --papel: #0f1411;
+  --cartao: #171e1a;
+  --tinta: #e8eee9;
+  --tinta-2: #c3ccc5;
+  --apagado: #94a098;
+  --linha: #28312c;
+  --folha: #7cbb98;
+  --folha-suave: #1c2b23;
+  --cereja: #e3685f;
+  --cereja-suave: #34201e;
+  --ouro: #d9a54c;
+}
+
+@theme inline {
+  --color-papel: var(--papel);
+  --color-cartao: var(--cartao);
+  --color-tinta: var(--tinta);
+  --color-tinta-2: var(--tinta-2);
+  --color-apagado: var(--apagado);
+  --color-linha: var(--linha);
+  --color-folha: var(--folha);
+  --color-folha-suave: var(--folha-suave);
+  --color-cereja: var(--cereja);
+  --color-cereja-suave: var(--cereja-suave);
+  --color-ouro: var(--ouro);
+  --font-sans: var(--font-figtree);
+  --font-display: var(--font-bricolage);
+  --font-mono: var(--font-jetbrains);
+}
+
+body {
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--folha);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
