@@ -7,6 +7,9 @@ export const MODELOS: PrecoModelo[] = [
   { id: "claude-sonnet-5", nome: "Claude Sonnet 5", entrada: 2, saida: 10, fonte: "anthropic.com/pricing" },
   { id: "claude-sonnet-5-5", nome: "Claude Sonnet 5.5", entrada: 2, saida: 10, fonte: "anthropic.com/pricing" },
   { id: "claude-opus-5-5", nome: "Claude Opus 5.5", entrada: 4, saida: 20, fonte: "anthropic.com/pricing" },
+  { id: "gpt-6-luna", nome: "GPT-6 Luna", entrada: 0.1, saida: 0.5, fonte: "developers.openai.com/api/docs/pricing" },
+  { id: "gpt-6.1-sol", nome: "GPT-6.1 Sol", entrada: 2, saida: 10, fonte: "developers.openai.com/api/docs/pricing" },
+  { id: "gpt-6-astra", nome: "GPT-6 Astra", entrada: 10, saida: 50, fonte: "developers.openai.com/api/docs/pricing" },
   { id: "gemini-2.5-flash", nome: "Gemini 2.5 Flash", entrada: 0.3, saida: 2.5, fonte: "openrouter.ai" },
   { id: "gemini-3.5-flash", nome: "Gemini 3.5 Flash", entrada: 1.5, saida: 9, fonte: "openrouter.ai" },
 ];

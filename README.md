@@ -7,9 +7,9 @@
 ![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=nextdotjs)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss&logoColor=white)
-![Testes](https://img.shields.io/badge/testes-143%20passando-24533f)
+![Testes](https://img.shields.io/badge/testes-154%20passando-24533f)
 ![Eval](https://img.shields.io/badge/eval%20PT--BR-100%2F100-24533f)
-![Claude](https://img.shields.io/badge/modo%20LLM-Claude-b5352e)
+![LLM](https://img.shields.io/badge/modo%20LLM-Claude%20%7C%20OpenAI-b5352e)
 
 </div>
 
@@ -133,8 +133,10 @@ liberado; “sofro de ansiedade” deixou de contar como saúde). Corrigido de n
 
 ## Modo LLM
 
-O mesmo agente com um modelo de verdade (Claude, via `@anthropic-ai/sdk`). O modelo decide quais ferramentas chamar, mas as
-ferramentas são **as mesmas funções** do modo demo e as travas continuam sendo código:
+O mesmo agente com um modelo de verdade: **Claude** (`@anthropic-ai/sdk`) ou **OpenAI** (`openai`, Responses API). O modelo
+decide quais ferramentas chamar, mas as ferramentas são **as mesmas funções** do modo demo e as travas continuam sendo
+código. Trocar de provedor não muda nenhuma regra: o laço do agente fala com um adaptador (`provedores.ts`), não com uma
+API específica.
 
 - **Antes do modelo:** dado pessoal é mascarado e não vai para o provedor. Injeção recebe resposta fixa **sem chamar o
   modelo** (custo zero).
@@ -145,19 +147,32 @@ ferramentas são **as mesmas funções** do modo demo e as travas continuam send
 - **Trace:** tokens e custo **reais**, do `usage` da API.
 - **Se o provedor falhar** (sem chave, sem crédito, fora do ar), a loja responde no modo demo e o trace registra o motivo.
 
-```powershell
-# PowerShell. A chave fica no ambiente, nunca no código.
-$env:ANTHROPIC_API_KEY = "<sua chave>"
-$env:MOENDA_MODO = "llm"                 # opt-in explícito: só a chave no ambiente não gasta nada
-$env:MOENDA_MODELO = "claude-opus-5-5"   # padrão; claude-sonnet-5-5 ou claude-haiku-4-5 saem mais barato
-npm run dev
+Crie o arquivo `web/.env.local` (já está fora do git) com **uma** das chaves:
+
+```bash
+# web/.env.local — a chave fica só na sua máquina, nunca no código
+MOENDA_MODO=llm              # opt-in explícito: só a chave, sem isto, não gasta nada
+
+OPENAI_API_KEY=sk-...        # OpenAI: modelo padrão gpt-6.1-sol
+# ANTHROPIC_API_KEY=sk-ant-... # ou Claude: modelo padrão claude-opus-5-5
+
+# opcionais
+# MOENDA_PROVEDOR=openai     # força o provedor quando houver as duas chaves (sem isto, Claude)
+# MOENDA_MODELO=gpt-6-luna   # outro modelo do mesmo provedor (gpt-6-luna é o mais barato)
 ```
 
-Detalhes: `effort: "low"` (atendimento de balcão não pede raciocínio longo), ferramentas com `strict: true` e fallback no
-servidor (`fallbacks: "default"`, beta `server-side-fallback-2026-07-01`) para quando o modelo recusa um pedido.
+Depois `npm run dev` e converse em `/assistente`: o painel Bastidores passa a mostrar o modelo, os tokens e o custo reais.
 
-> **Ainda não medido:** a eval não rodou no modo LLM. Os testes do modo LLM cobrem ferramentas, travas e mensagens sem
-> rede, e um deles prova que a injeção não chega ao modelo.
+| Provedor | Detalhes da chamada |
+| --- | --- |
+| OpenAI | Responses API, `reasoning.effort: "low"`, `store: false` (nada fica guardado na OpenAI). `strict` desligado porque os filtros da busca são opcionais; a entrada é validada de novo no código |
+| Claude | `effort: "low"`, ferramentas com `strict: true` e fallback no servidor (`fallbacks: "default"`, beta `server-side-fallback-2026-07-01`) para quando o modelo recusa |
+
+Nos dois: resposta cortada pelo limite de tokens vira uma pergunta de reserva, nunca uma bolha vazia.
+
+> **Ainda não medido:** a eval não rodou no modo LLM, e nenhuma chamada paga foi feita. O laço da OpenAI é testado com o
+> SDK de verdade e só o HTTP roteirizado (chamada de ferramenta, resultado com o `call_id`, tokens, preço inventado,
+> resposta cortada, filtro de conteúdo); um teste prova que a injeção não chega ao modelo.
 
 ## Rodar
 
@@ -165,7 +180,7 @@ servidor (`fallbacks: "default"`, beta `server-side-fallback-2026-07-01`) para q
 cd web
 npm install
 npm run dev        # http://localhost:3000
-npm test           # 143 testes (Vitest)
+npm test           # 154 testes (Vitest)
 npm run eval       # roda a eval em todas as versões e grava os traces de /custos
 ```
 
@@ -182,6 +197,7 @@ web/src/lib/agente/            o agente
   travas.ts                    injeção, dados pessoais, saúde, preço, estoque
   agente.ts                    modo demo: orquestra e registra cada passo do trace
   llm.ts                       modo LLM: o mesmo laço com um modelo de verdade
+  provedores.ts                adaptadores Claude e OpenAI
   versoes.ts                   v0.1 → v0.4, uma capacidade nova por versão
   precos-modelos.ts            preço por modelo (custo do trace e simulador)
   registro.ts                  traces em JSONL (.dados/, fora do git)

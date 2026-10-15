@@ -1,4 +1,3 @@
-import Anthropic from "@anthropic-ai/sdk";
 import { brl, METODOS, TORRAS, type Produto } from "@/lib/catalogo";
 import { buscarProdutos, checarCompatibilidade, compativeis, detalharProduto, montarCarrinho, type FiltrosBusca } from "@/lib/agente/ferramentas";
 import { custo } from "@/lib/agente/precos-modelos";
@@ -12,14 +11,15 @@ import {
   tocaEmSaude,
 } from "@/lib/agente/travas";
 import type { Entrada } from "@/lib/agente/agente";
+import { ABRIR, MODELO_PADRAO, provedorLLM, type AbrirConversa, type FerramentaNeutra, type MensagemSimples } from "@/lib/agente/provedores";
 import type { Mensagem, Passo, Trace } from "@/lib/agente/tipos";
 
 // Modo LLM: as MESMAS ferramentas e travas do modo demo, em volta de um modelo de verdade.
 // Liga só com MOENDA_MODO=llm (opt-in explícito: chave no ambiente sozinha não gasta dinheiro).
-// Credencial: o SDK lê ANTHROPIC_API_KEY (ou ANTHROPIC_AUTH_TOKEN / `ant auth login`) do ambiente.
+// Provedor: Claude (ANTHROPIC_API_KEY) ou OpenAI (OPENAI_API_KEY), em provedores.ts. Os SDKs leem a chave do ambiente.
 
 export const modoLLMLigado = () => process.env.MOENDA_MODO === "llm";
-export const modeloLLM = () => process.env.MOENDA_MODELO || "claude-opus-5-5";
+export const modeloLLM = () => process.env.MOENDA_MODELO || MODELO_PADRAO[provedorLLM()];
 
 const MAX_VOLTAS = 6;
 
@@ -34,13 +34,12 @@ export const SISTEMA = `Você é a assistente da Moenda, loja de café especial.
 
 const TIPOS = ["moedor", "cafeteira", "chaleira", "balanca", "acessorio"];
 
-// strict: o esquema é garantido pela API; additionalProperties: false é obrigatório.
-export const FERRAMENTAS: Anthropic.Beta.BetaTool[] = [
+// Formato neutro; cada provedor adapta (provedores.ts). additionalProperties: false em todas.
+export const FERRAMENTAS: FerramentaNeutra[] = [
   {
     name: "buscar_produtos",
     description:
       "Busca no catálogo da Moenda. Devolve até 5 produtos EM ESTOQUE, mais relevantes primeiro, com id, preço e notas. Use para qualquer recomendação.",
-    strict: true,
     input_schema: {
       type: "object",
       properties: {
@@ -61,7 +60,6 @@ export const FERRAMENTAS: Anthropic.Beta.BetaTool[] = [
     name: "checar_compatibilidade",
     description:
       "Com só produto_id: devolve o que falta para usar o produto (filtro do tamanho certo, moedor que serve para o método). Com outro_id: diz se os dois combinam.",
-    strict: true,
     input_schema: {
       type: "object",
       properties: {
@@ -76,7 +74,6 @@ export const FERRAMENTAS: Anthropic.Beta.BetaTool[] = [
   {
     name: "montar_carrinho",
     description: "Monta o carrinho com os ids informados. Produtos esgotados ou inexistentes ficam de fora. Devolve itens e total.",
-    strict: true,
     input_schema: {
       type: "object",
       properties: { ids: { type: "array", items: { type: "string" } } },
@@ -185,14 +182,14 @@ export function executarFerramenta(nome: string, entrada: unknown): ResultadoFer
 }
 
 /** Histórico do site → mensagens da API: mascarado, começando pelo cliente e alternando papéis. */
-export function montarMensagens(fala: string, historico: Mensagem[] = []): Anthropic.Beta.BetaMessageParam[] {
-  const msgs: Anthropic.Beta.BetaMessageParam[] = [];
+export function montarMensagens(fala: string, historico: Mensagem[] = []): MensagemSimples[] {
+  const msgs: MensagemSimples[] = [];
   for (const m of [...historico, { papel: "cliente" as const, texto: fala }]) {
     const role = m.papel === "cliente" ? "user" : "assistant";
     const conteudo = mascararDadosPessoais(m.texto).texto;
     if (!msgs.length && role === "assistant") continue;
     const ultima = msgs.at(-1);
-    if (ultima?.role === role) ultima.content = `${ultima.content as string}\n${conteudo}`;
+    if (ultima?.role === role) ultima.content = `${ultima.content}\n${conteudo}`;
     else msgs.push({ role, content: conteudo });
   }
   return msgs;
@@ -208,12 +205,10 @@ export function conferirSaida(resposta: string, vistos: Produto[], carrinho?: Tr
   return { citados, precos, estoque };
 }
 
-type ClienteMensagens = { beta: { messages: { create: Anthropic["beta"]["messages"]["create"] } } };
-
 let seq = 0;
 const novoId = () => `l_${Date.now().toString(36)}_${(seq++).toString(36)}`;
 
-export async function responderLLM(entrada: Entrada, cliente: ClienteMensagens = new Anthropic()): Promise<Trace> {
+export async function responderLLM(entrada: Entrada, abrir: AbrirConversa = ABRIR[provedorLLM()]): Promise<Trace> {
   const t0 = performance.now();
   const modelo = modeloLLM();
   const passos: Passo[] = [];
@@ -262,51 +257,42 @@ export async function responderLLM(entrada: Entrada, cliente: ClienteMensagens =
   let carrinho: Trace["carrinho"];
   let resposta = "";
 
+  const conversa = abrir({ modelo, sistema, mensagens, ferramentas: FERRAMENTAS });
   for (let volta = 1; volta <= MAX_VOLTAS; volta++) {
     t = performance.now();
-    const r = await cliente.beta.messages.create({
-      model: modelo,
-      max_tokens: 4000,
-      system: sistema,
-      tools: FERRAMENTAS,
-      messages: mensagens,
-      output_config: { effort: "low" }, // tarefa de balcão: pouco raciocínio, resposta rápida
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default", // recusa do modelo é refeita no servidor por outro modelo
-    });
-    servidoPor = r.model;
-    tokens.entrada += r.usage.input_tokens + (r.usage.cache_read_input_tokens ?? 0) + (r.usage.cache_creation_input_tokens ?? 0);
-    tokens.saida += r.usage.output_tokens;
-    marcar({ tipo: "modelo", nome: `chamada_${volta}`, detalhe: `${r.model} · ${r.stop_reason} · ${r.usage.input_tokens}→${r.usage.output_tokens} tokens`, status: "ok" }, t);
+    const r = await conversa.enviar();
+    servidoPor = r.modelo;
+    tokens.entrada += r.entrada;
+    tokens.saida += r.saida;
+    marcar({ tipo: "modelo", nome: `chamada_${volta}`, detalhe: `${r.modelo} · ${r.parada} · ${r.entrada}→${r.saida} tokens`, status: "ok" }, t);
 
-    if (r.stop_reason === "refusal") {
+    if (r.recusou) {
       resposta = "Não consigo ajudar com isso por aqui. Posso te mostrar cafés, equipamentos e jeitos de preparo?";
-      marcar({ tipo: "trava", nome: "recusa_do_modelo", detalhe: "O modelo (e o fallback) recusou. Resposta fixa.", status: "bloqueou" }, performance.now());
+      marcar({ tipo: "trava", nome: "recusa_do_modelo", detalhe: "O modelo recusou. Resposta fixa.", status: "bloqueou" }, performance.now());
       break;
     }
-    const textoDaVolta = r.content.filter((b): b is Anthropic.Beta.BetaTextBlock => b.type === "text").map((b) => b.text).join("\n").trim();
-    if (r.stop_reason === "pause_turn") {
-      mensagens.push({ role: "assistant", content: r.content });
-      continue;
-    }
-    if (r.stop_reason !== "tool_use") {
-      resposta = textoDaVolta;
+    if (r.continuar) continue;
+    if (!r.chamadas.length) {
+      resposta = r.texto;
       break;
     }
 
-    mensagens.push({ role: "assistant", content: r.content });
-    const resultados: Anthropic.Beta.BetaToolResultBlockParam[] = [];
-    for (const b of r.content) {
-      if (b.type !== "tool_use") continue;
+    const resultados = r.chamadas.map((c) => {
       const tf = performance.now();
-      const res = executarFerramenta(b.name, b.input);
+      const res = executarFerramenta(c.nome, c.entrada);
       vistos.push(...res.produtos);
       if (res.carrinho) carrinho = res.carrinho;
-      marcar({ tipo: "ferramenta", nome: b.name, detalhe: res.detalhe, status: res.erro ? "alerta" : "ok" }, tf);
-      resultados.push({ type: "tool_result", tool_use_id: b.id, content: res.conteudo, is_error: res.erro });
-    }
-    mensagens.push({ role: "user", content: resultados });
-    if (volta === MAX_VOLTAS) resposta = textoDaVolta || "Não consegui fechar a recomendação agora. Pode me dizer o método de preparo e o quanto quer gastar?";
+      marcar({ tipo: "ferramenta", nome: c.nome, detalhe: res.detalhe, status: res.erro ? "alerta" : "ok" }, tf);
+      return { id: c.id, conteudo: res.conteudo, erro: res.erro };
+    });
+    conversa.devolver(resultados);
+    if (volta === MAX_VOLTAS) resposta = r.texto || "Não consegui fechar a recomendação agora. Pode me dizer o método de preparo e o quanto quer gastar?";
+  }
+
+  // Resposta cortada (limite de tokens) ou vazia: o cliente nunca recebe uma bolha em branco.
+  if (!resposta.trim()) {
+    resposta = "Não consegui fechar a recomendação agora. Pode me dizer o método de preparo e o quanto quer gastar?";
+    marcar({ tipo: "saida", nome: "resposta_vazia", detalhe: "O modelo não devolveu texto. Resposta de reserva.", status: "alerta" }, performance.now());
   }
 
   // 3. Travas de saída sobre o texto do modelo.
