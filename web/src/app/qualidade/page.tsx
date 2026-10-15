@@ -25,6 +25,10 @@ function Barras({ lista, titulo }: { lista: ResultadoVersao[]; titulo: string })
           </div>
         ))}
       </div>
+      <p className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-apagado">
+        <span className="flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-folha" />sem falha grave</span>
+        <span className="flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-ouro/70" />com falha grave</span>
+      </p>
     </div>
   );
 }

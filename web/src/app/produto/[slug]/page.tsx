@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { CartaoProduto } from "@/components/CartaoProduto";
 import { Embalagem } from "@/components/Embalagem";
-import { brl, combinaCom, porSlug, produtos } from "@/lib/catalogo";
+import { brl, CATEGORIAS, combinaCom, porSlug, produtos } from "@/lib/catalogo";
 
 export function generateStaticParams() {
   return produtos.map((p) => ({ slug: p.slug }));
@@ -59,7 +59,7 @@ async function Detalhe({ params }: { params: PageProps<"/produto/[slug]">["param
     <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
       <nav className="text-sm text-apagado">
         <Link href="/loja" className="hover:text-folha">Loja</Link> /{" "}
-        <Link href={`/loja?categoria=${p.categoria}`} className="hover:text-folha">{p.categoria}</Link>
+        <Link href={`/loja?categoria=${p.categoria}`} className="hover:text-folha">{CATEGORIAS.find((c) => c.id === p.categoria)?.nome ?? p.categoria}</Link>
       </nav>
 
       <div className="mt-6 grid gap-10 md:grid-cols-2">

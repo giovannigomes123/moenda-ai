@@ -9,7 +9,14 @@ const COR_TORRA: Record<Torra, string> = {
   Escura: "#3a2216",
 };
 
+// O rótulo tem 92 de largura: texto longo ("Norte Pioneiro do Paraná") é comprimido para caber, não cortado.
+const LARGURA_ROTULO = 82;
+const caber = (texto: string, fonte: number) =>
+  texto.length * fonte * 0.52 > LARGURA_ROTULO ? { textLength: LARGURA_ROTULO, lengthAdjust: "spacingAndGlyphs" as const } : {};
+
 function Pacote({ p }: { p: Produto }) {
+  const origem = (p.origem ?? "").split(",")[0];
+  const torra = `torra ${p.torra?.toLowerCase()} · ${p.peso_g} g`;
   const cor = COR_TORRA[p.torra ?? "Média"];
   const clara = p.torra === "Clara" || p.torra === "Média-clara";
   const texto = clara ? "#2a1a0e" : "#f6efe4";
@@ -31,11 +38,11 @@ function Pacote({ p }: { p: Produto }) {
         </text>
       )}
       <line x1="70" y1="150" x2="130" y2="150" stroke="#dde2dc" />
-      <text x="100" y="164" textAnchor="middle" fontSize="8" fill="#3b4640">
-        {(p.origem ?? "").split(",")[0]}
+      <text x="100" y="164" textAnchor="middle" fontSize="8" fill="#3b4640" {...caber(origem, 8)}>
+        {origem}
       </text>
-      <text x="100" y="175" textAnchor="middle" fontSize="7.5" fill="#69736c">
-        torra {p.torra?.toLowerCase()} · {p.peso_g} g
+      <text x="100" y="175" textAnchor="middle" fontSize="7.5" fill="#69736c" {...caber(torra, 7.5)}>
+        {torra}
       </text>
       <text x="100" y="204" textAnchor="middle" fontSize="8" fill={texto} opacity="0.85" fontFamily="monospace">
         {p.pontuacao_sca?.toFixed(1)} SCA
