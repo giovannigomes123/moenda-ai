@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { produtos } from "@/lib/catalogo";
-import { FERRAMENTAS, conferirSaida, executarFerramenta, modeloLLM, montarMensagens, responderLLM } from "@/lib/agente/llm";
+import { FERRAMENTAS, conferirSaida, executarFerramenta, modeloLLM, montarMensagens, responderLLM, usarLLM } from "@/lib/agente/llm";
 import { lerArgumentos, provedorLLM } from "@/lib/agente/provedores";
 import { custo } from "@/lib/agente/precos-modelos";
 import { MSG_INJECAO } from "@/lib/agente/travas";
@@ -139,6 +139,18 @@ describe("escolha do provedor", () => {
     com({ OPENAI_API_KEY: "x", ANTHROPIC_API_KEY: "y" }, () => expect(provedorLLM()).toBe("anthropic"));
     com({ OPENAI_API_KEY: "x", ANTHROPIC_API_KEY: "y", MOENDA_PROVEDOR: "openai" }, () => expect(provedorLLM()).toBe("openai"));
   });
+  it("só a versão atual vai para o modelo; versões antigas seguem simuladas", () =>
+    com({ OPENAI_API_KEY: "x" }, () => {
+      process.env.MOENDA_MODO = "llm";
+      try {
+        expect(usarLLM(undefined)).toBe(true);
+        expect(usarLLM("v0.4")).toBe(true);
+        expect(usarLLM("v0.1")).toBe(false);
+      } finally {
+        delete process.env.MOENDA_MODO;
+      }
+      expect(usarLLM("v0.4")).toBe(false); // sem MOENDA_MODO=llm, nada vai para o modelo
+    }));
   it("MOENDA_MODELO vence o padrão", () => com({ OPENAI_API_KEY: "x", MOENDA_MODELO: "gpt-6-luna" }, () => expect(modeloLLM()).toBe("gpt-6-luna")));
 });
 

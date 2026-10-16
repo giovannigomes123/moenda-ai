@@ -1,6 +1,6 @@
 import { responder } from "@/lib/agente/agente";
 import { validarCorpo } from "@/lib/agente/entrada";
-import { modoLLMLigado, responderLLM } from "@/lib/agente/llm";
+import { responderLLM, usarLLM } from "@/lib/agente/llm";
 import { registrar } from "@/lib/agente/registro";
 import type { Trace } from "@/lib/agente/tipos";
 
@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   if (!entrada.ok) return Response.json({ erro: entrada.erro }, { status: 400 });
 
   let trace: Trace;
-  if (modoLLMLigado()) {
+  if (usarLLM(entrada.valor.versao)) {
     try {
       trace = await responderLLM(entrada.valor);
     } catch (erro) {

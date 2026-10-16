@@ -70,6 +70,15 @@ describe("modo LLM com OpenAI (SDK real, HTTP roteirizado)", () => {
     expect(tr.resposta).toContain("[preço no site]");
   });
 
+  // Resposta real do gpt-6.1-sol em 16/10 (print do iniciante): "**Total: R$ 239,00**" aparecia com os asteriscos.
+  it("markdown que o modelo escreve não aparece cru no chat", async () => {
+    const { abrir } = openaiRoteirizada([chamadaBusca, mensagem("Carrinho montado!\n\n## Resumo\n**Total: R$ 9,99**")]);
+    const tr = await responderLLM({ fala: "cafe pra moka ate 80 reais" }, abrir);
+    expect(tr.resposta).not.toMatch(/\*\*|^#/m);
+    expect(tr.resposta).toContain("Resumo");
+    expect(tr.resposta).toContain("Total: [preço no site]"); // e a trava de preço continua valendo
+  });
+
   it("saída cortada pelo limite de tokens não vira bolha vazia", async () => {
     const cortada = { ...base, id: "resp_3", status: "incomplete", incomplete_details: { reason: "max_output_tokens" }, output: [{ type: "reasoning", id: "rs_2", summary: [] }], usage: { input_tokens: 800, output_tokens: 4000, total_tokens: 4800 } };
     const { abrir } = openaiRoteirizada([cortada]);

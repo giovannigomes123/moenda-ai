@@ -64,7 +64,7 @@ export function Bastidores({ trace }: { trace?: Trace }) {
                 <span className="font-mono text-sm font-semibold">{p.nome}</span>
                 {p.status !== "ok" && <span className="text-[11px] font-semibold uppercase text-cereja">{p.status}</span>}
               </p>
-              <p className="mt-0.5 text-sm text-tinta-2">{p.detalhe}</p>
+              <p className="mt-0.5 text-sm break-words text-tinta-2">{p.detalhe}</p>
             </div>
           </li>
         ))}

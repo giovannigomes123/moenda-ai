@@ -21,7 +21,8 @@ const SUGESTOES = [
 
 const porId = new Map(produtos.map((p) => [p.id, p]));
 
-export function Chat() {
+/** `modelo` vem do servidor quando o modo LLM está ligado (a chave nunca chega aqui). */
+export function Chat({ modelo }: { modelo?: string }) {
   const [itens, setItens] = useState<Item[]>([]);
   const [texto, setTexto] = useState("");
   const [versao, setVersao] = useState(VERSAO_ATUAL.id);
@@ -78,7 +79,13 @@ export function Chat() {
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-linha px-4 py-3 sm:px-6">
           <div>
             <h1 className="font-display text-xl font-bold">Assistente Moenda</h1>
-            <p className="text-xs text-apagado">Modo demo: agente determinístico, sem modelo de linguagem.</p>
+            <p className="text-xs text-apagado">
+              {modelo && versao === VERSAO_ATUAL.id
+                ? `Modo LLM: ${modelo} escolhe as ferramentas; as travas continuam em código.`
+                : modelo
+                  ? "Versão antiga simulada no modo demo, para comparar com a atual."
+                  : "Modo demo: agente determinístico, sem modelo de linguagem."}
+            </p>
           </div>
           <div className="flex items-center gap-1 rounded-full border border-linha bg-cartao p-1" role="radiogroup" aria-label="Versão do agente">
             {VERSOES.map((v) => (

@@ -7,7 +7,7 @@
 ![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=nextdotjs)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss&logoColor=white)
-![Testes](https://img.shields.io/badge/testes-154%20passando-24533f)
+![Testes](https://img.shields.io/badge/testes-168%20passando-24533f)
 ![Eval](https://img.shields.io/badge/eval%20PT--BR-100%2F100-24533f)
 ![LLM](https://img.shields.io/badge/modo%20LLM-Claude%20%7C%20OpenAI-b5352e)
 
@@ -80,6 +80,15 @@ travas entram (v0.4). Ser mais útil sem travas é ser mais perigoso.
 | **Produto**: perfil sensorial e “combina com” | **Qualidade**: a eval por versão, cenário por cenário |
 | ![Custos](docs/telas/custos.png) | <img src="docs/telas/celular-escuro.png" alt="Home no celular, tema escuro" width="260"> |
 | **Custos**: custo e latência por resposta, travas que agiram e simulador de modelo | **Celular e tema escuro** |
+
+## A assistente com o GPT de verdade
+
+| | |
+| :---: | :---: |
+| ![Expresso](docs/telas/agente-llm/01-expresso-moedor.png) | ![Injeção](docs/telas/agente-llm/04-injecao-bloqueada.png) |
+| Busca, confere compatibilidade e pergunta do moedor | Injeção bloqueada antes do modelo; a conversa segue |
+| ![Dado pessoal](docs/telas/agente-llm/05-dado-pessoal.png) | ![Iniciante](docs/telas/agente-llm/07-iniciante-carrinho.png) |
+| CPF e celular mascarados antes de ir ao provedor | Iniciante recebe o kit e o carrinho |
 
 ## Como a assistente pensa
 
@@ -170,9 +179,11 @@ Depois `npm run dev` e converse em `/assistente`: o painel Bastidores passa a mo
 
 Nos dois: resposta cortada pelo limite de tokens vira uma pergunta de reserva, nunca uma bolha vazia.
 
-> **Ainda não medido:** a eval não rodou no modo LLM, e nenhuma chamada paga foi feita. O laço da OpenAI é testado com o
-> SDK de verdade e só o HTTP roteirizado (chamada de ferramenta, resultado com o `call_id`, tokens, preço inventado,
-> resposta cortada, filtro de conteúdo); um teste prova que a injeção não chega ao modelo.
+> **Testado com o GPT-6.1 Sol (16/10/2026):** as 8 conversas de `docs/telas/agente-llm/` rodaram com o modelo de verdade.
+> Cada resposta custou cerca de **US$ 0,005–0,008** e levou **5–10 s**. As travas agiram do mesmo jeito do modo demo:
+> injeção bloqueada antes do modelo, CPF e celular mascarados antes de sair da máquina, saúde com o aviso fixo e só
+> descafeinado. Dois ajustes saíram desse teste: o chat agora tira o markdown que o modelo escreve (`**Total**`), e o JSON
+> longo não vaza do painel. **Ainda não medido:** a eval completa no modo LLM.
 
 ## Rodar
 
@@ -180,7 +191,7 @@ Nos dois: resposta cortada pelo limite de tokens vira uma pergunta de reserva, n
 cd web
 npm install
 npm run dev        # http://localhost:3000
-npm test           # 154 testes (Vitest)
+npm test           # 168 testes (Vitest)
 npm run eval       # roda a eval em todas as versões e grava os traces de /custos
 ```
 
