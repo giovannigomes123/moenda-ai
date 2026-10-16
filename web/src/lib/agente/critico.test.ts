@@ -139,3 +139,41 @@ describe("rodada 2: entender vê a fala crua; só o registro é mascarado", () =
     expect(entender("quero algo forte, nao aguado, pra prensa", true).torras).toEqual(["Média-escura", "Escura"]);
   });
 });
+
+// Achado nos prints de 16/10: "nunca fiz café especial, quero começar do zero com V60, monta o carrinho"
+// buscava café solto (a palavra "café" ganhava) e montava R$ 458 sem o suporte V60. Quem começa do zero precisa do kit.
+describe("iniciante do zero recebe o kit, não café solto", () => {
+  const categoriaDe = (fala: string) => entender(fala, true).categoria;
+  it.each([
+    "nunca fiz café especial, quero começar do zero com V60, monta o carrinho",
+    "nunca fiz cafe especial, quero comecar do zero",
+    "sou iniciante, quero começar a fazer café em casa",
+    "primeira vez fazendo cafe filtrado, o que preciso?",
+    "quero comecar no cafe especial do zero, uso prensa",
+  ])("kit: %s", (fala) => expect(categoriaDe(fala)).toBe("kit"));
+
+  it.each([
+    ["sou iniciante, qual café compro pra V60?", "cafe"],
+    ["to começando, quero um moedor barato", "equipamento"],
+    ["comecei agora, preciso de filtro pra V60", "filtro"],
+    ["primeira vez que compro aqui, quero café pra moka", "cafe"],
+    ["iniciante, que café pra prensa até 80 conto?", "cafe"],
+  ])("pedido específico continua específico: %s", (fala, cat) => expect(categoriaDe(fala)).toBe(cat));
+
+  it("o carrinho do iniciante com V60 sai do kit de V60", () => {
+    const tr = responder({ fala: "nunca fiz café especial, quero começar do zero com V60, monta o carrinho", versao: "v0.4" });
+    expect(tr.carrinho?.itens.map((i) => i.nome)).toContain("Kit Começando no V60");
+    expect(tr.resposta).toContain("1 item,");
+  });
+});
+
+describe("textos que aparecem no print", () => {
+  it("plural certo no Bastidores e descafeinado dito na resposta", () => {
+    const tr = responder({ fala: "tô grávida, posso tomar café? uso V60", versao: "v0.4" });
+    const detalhes = tr.passos.map((p) => p.detalhe).join(" | ");
+    expect(detalhes).toContain("1 encontrado.");
+    expect(detalhes).toContain("1 produto citado.");
+    expect(detalhes).not.toMatch(/\b1 (encontrados|produtos)\b/);
+    expect(tr.resposta).toMatch(/descafeinado ·/);
+  });
+});

@@ -161,6 +161,12 @@ export function entender(fala: string, apelidos: boolean): Pedido {
     p.categoria = "cafe";
     p.entendido.push("objeto=café");
   }
+  // "nunca fiz café especial, quero começar do zero": "café" é o assunto; quem começa do zero precisa do kit.
+  // "iniciante, que café pra prensa?" continua pedindo café.
+  if (!p.categoria && p.quer_comecar && !/\b(q|que|qual|quais)\s+cafes?\b|\bcafes?\s+(pra|para)\b/.test(f)) {
+    p.categoria = "kit";
+    p.entendido.push("kit iniciante");
+  }
   if (!p.categoria && (p.torras || p.notas || p.descafeinado || /\bcafes?\b/.test(f))) {
     p.categoria = "cafe";
   }

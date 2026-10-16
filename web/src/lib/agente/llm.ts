@@ -10,7 +10,7 @@ import {
   mascararDadosPessoais,
   tocaEmSaude,
 } from "@/lib/agente/travas";
-import type { Entrada } from "@/lib/agente/agente";
+import { contar, type Entrada } from "@/lib/agente/agente";
 import { ABRIR, MODELO_PADRAO, provedorLLM, type AbrirConversa, type FerramentaNeutra, type MensagemSimples } from "@/lib/agente/provedores";
 import type { Mensagem, Passo, Trace } from "@/lib/agente/tipos";
 
@@ -174,7 +174,7 @@ export function executarFerramenta(nome: string, entrada: unknown): ResultadoFer
       erro: false,
       produtos,
       carrinho: c,
-      detalhe: `${c.itens.length} itens, ${brl(c.total)}${fora.length ? `; fora: ${fora.join(", ")}` : ""}`,
+      detalhe: `${contar(c.itens.length, "item", "itens")}, ${brl(c.total)}${fora.length ? `; fora: ${fora.join(", ")}` : ""}`,
     };
   }
 
@@ -302,6 +302,6 @@ export async function responderLLM(entrada: Entrada, abrir: AbrirConversa = ABRI
   marcar({ tipo: "trava", nome: "precos", detalhe: saida.precos.ok ? "Todo preço confere com o catálogo." : `Preço fora do catálogo trocado: ${saida.precos.errados.join(", ")}.`, status: saida.precos.ok ? "ok" : "corrigiu" }, t);
   marcar({ tipo: "trava", nome: "estoque", detalhe: saida.estoque.ok ? "Nada esgotado na resposta." : `Esgotado citado: ${saida.estoque.esgotados.map((p) => p.nome).join(", ")}.`, status: saida.estoque.ok ? "ok" : "alerta" }, performance.now());
   if (saude && !resposta.includes(AVISO_SAUDE)) resposta = `${AVISO_SAUDE}\n\n${resposta}`;
-  marcar({ tipo: "saida", nome: "resposta", detalhe: `${saida.citados.length} produtos citados.`, status: "ok" }, performance.now());
+  marcar({ tipo: "saida", nome: "resposta", detalhe: `${contar(saida.citados.length, "produto citado", "produtos citados")}.`, status: "ok" }, performance.now());
   return fechar(resposta, saida.citados, fala, carrinho);
 }

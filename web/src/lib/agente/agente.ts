@@ -23,9 +23,12 @@ export type Entrada = { fala: string; historico?: Mensagem[]; versao?: string };
 let seq = 0;
 const novoId = () => `t_${Date.now().toString(36)}_${(seq++).toString(36)}`;
 
+/** "1 encontrado", "3 encontrados": o painel Bastidores aparece em print, o plural tem que estar certo. */
+export const contar = (n: number, singular: string, plural: string) => `${n} ${n === 1 ? singular : plural}`;
+
 function linhaProduto(p: Produto) {
   const sobre = p.notas ? p.notas.join(", ") : p.metodos?.length ? `para ${p.metodos.slice(0, 3).join(", ")}` : (p.descricao ?? "");
-  const extra = p.pontuacao_sca ? ` · ${p.pontuacao_sca.toFixed(1)} pts` : "";
+  const extra = `${p.descafeinado ? " · descafeinado" : ""}${p.pontuacao_sca ? ` · ${p.pontuacao_sca.toFixed(1)} pts` : ""}`;
   return `• ${p.nome} (${p.marca}) — ${sobre}${extra} — ${brl(p.preco)}`;
 }
 
@@ -128,7 +131,7 @@ export function responder(entrada: Entrada): Trace {
   marcar({
     tipo: "ferramenta",
     nome: "buscar_produtos",
-    detalhe: `${busca.total} encontrados${busca.esgotados_ignorados ? `, ${busca.esgotados_ignorados} esgotados fora` : ""}.`,
+    detalhe: `${contar(busca.total, "encontrado", "encontrados")}${busca.esgotados_ignorados ? `, ${contar(busca.esgotados_ignorados, "esgotado fora", "esgotados fora")}` : ""}.`,
     status: "ok",
     dados: filtros,
   }, t);
@@ -143,7 +146,7 @@ export function responder(entrada: Entrada): Trace {
       afrouxados.push(rotulo);
       // Sem caber no orçamento, o que mais se aproxima é o mais barato — não o mais bem pontuado.
       busca = buscarProdutos(filtros, { incluirEsgotados: !cap.travas, ordem: afrouxados.includes("preço") ? "preco" : "relevancia" });
-      marcar({ tipo: "ferramenta", nome: "buscar_produtos", detalhe: `Sem resultado: tirei ${rotulo}. ${busca.total} encontrados.`, status: "alerta", dados: { ...filtros } }, t);
+      marcar({ tipo: "ferramenta", nome: "buscar_produtos", detalhe: `Sem resultado: tirei ${rotulo}. ${contar(busca.total, "encontrado", "encontrados")}.`, status: "alerta", dados: { ...filtros } }, t);
       if (busca.itens.length) break;
     }
   }
@@ -196,7 +199,7 @@ export function responder(entrada: Entrada): Trace {
   if (pedido.quer_carrinho && cap.compatibilidade && !avisoFiltro) {
     t = performance.now();
     carrinho = montarCarrinho([principal.id, ...extras.map((e) => e.id)]);
-    marcar({ tipo: "ferramenta", nome: "montar_carrinho", detalhe: `${carrinho.itens.length} itens · ${brl(carrinho.total)}.`, status: "ok", dados: carrinho }, t);
+    marcar({ tipo: "ferramenta", nome: "montar_carrinho", detalhe: `${contar(carrinho.itens.length, "item", "itens")} · ${brl(carrinho.total)}.`, status: "ok", dados: carrinho }, t);
   }
 
   // 6. Resposta
@@ -208,7 +211,7 @@ export function responder(entrada: Entrada): Trace {
   partes.push(busca.itens.map(linhaProduto).join("\n"));
   if (extras.length) partes.push(`Pra usar o ${principal.nome}, você vai precisar de: ${extras.map((e) => `${e.nome} (${brl(e.preco)})`).join(", ")}.`);
   if (avisoFiltro) partes.push(avisoFiltro);
-  if (carrinho) partes.push(`Montei o carrinho: ${carrinho.itens.length} itens, total de ${brl(carrinho.total)}.`);
+  if (carrinho) partes.push(`Montei o carrinho: ${contar(carrinho.itens.length, "item", "itens")}, total de ${brl(carrinho.total)}.`);
   let resposta = partes.join("\n\n");
 
   // 7. Travas de saída
@@ -221,6 +224,6 @@ export function responder(entrada: Entrada): Trace {
     const estoque = conferirEstoque(citados);
     marcar({ tipo: "trava", nome: "estoque", detalhe: estoque.ok ? "Nada esgotado na resposta." : `Esgotado citado: ${estoque.esgotados.map((p) => p.nome).join(", ")}.`, status: estoque.ok ? "ok" : "alerta" }, t);
   }
-  marcar({ tipo: "saida", nome: "resposta", detalhe: `${citados.length} produtos citados.`, status: "ok" }, performance.now());
+  marcar({ tipo: "saida", nome: "resposta", detalhe: `${contar(citados.length, "produto citado", "produtos citados")}.`, status: "ok" }, performance.now());
   return fechar(resposta, citados, carrinho);
 }
